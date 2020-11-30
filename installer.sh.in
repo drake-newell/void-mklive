@@ -1187,7 +1187,7 @@ install_packages() {
     _arch=$(xbps-uhelper arch)
 
     stdbuf -oL env XBPS_ARCH=${_arch} \
-        xbps-install  -r $TARGETDIR -SyU ${_syspkg} ${_grub} 2>&1 | \
+        xbps-install  -R https://ymirlinux.org/libre -R https://alpha.de.repo.voidlinux.org/current $TARGETDIR -SyU ${_syspkg} ${_grub} 2>&1 | \
         DIALOG --title "Installing base system packages..." \
         --programbox 24 80
     if [ $? -ne 0 ]; then
