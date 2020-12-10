@@ -1,7 +1,8 @@
 #!/bin/sh
 
-ARCH=
-IMAGE=
+ARCH="x86_64"
+IMAGE="base"
+REPO="https://ymirlinux.org/libre"
 
 while getopts "a:b:hr:" opt; do
 case $opt in
@@ -16,15 +17,15 @@ shift $((OPTIND - 1))
 : ${ARCH:=$(uname -m)}
 
 readonly DATE=$(date +%Y%m%d)
-readonly BASE_IMG=void-live-${ARCH}-${DATE}.iso
-readonly E_IMG=void-live-${ARCH}-${DATE}-enlightenment.iso
-readonly XFCE_IMG=void-live-${ARCH}-${DATE}-xfce.iso
-readonly MATE_IMG=void-live-${ARCH}-${DATE}-mate.iso
-readonly CINNAMON_IMG=void-live-${ARCH}-${DATE}-cinnamon.iso
-readonly GNOME_IMG=void-live-${ARCH}-${DATE}-gnome.iso
-readonly KDE_IMG=void-live-${ARCH}-${DATE}-kde.iso
-readonly LXDE_IMG=void-live-${ARCH}-${DATE}-lxde.iso
-readonly LXQT_IMG=void-live-${ARCH}-${DATE}-lxqt.iso
+readonly BASE_IMG=/srv/www/lighttpd/live/ymir-live-${ARCH}-${DATE}.iso
+readonly E_IMG=/srv/www/lighttpd/live/ymir-live-${ARCH}-${DATE}-enlightenment.iso
+readonly XFCE_IMG=/srv/www/lighttpd/live/ymir-live-${ARCH}-${DATE}-xfce.iso
+readonly MATE_IMG=/srv/www/lighttpd/live/ymir-live-${ARCH}-${DATE}-mate.iso
+readonly CINNAMON_IMG=/srv/www/lighttpd/live/ymir-live-${ARCH}-${DATE}-cinnamon.iso
+readonly GNOME_IMG=/srv/www/lighttpd/live/ymir-live-${ARCH}-${DATE}-gnome.iso
+readonly KDE_IMG=/srv/www/lighttpd/live/ymir-live-${ARCH}-${DATE}-kde.iso
+readonly LXDE_IMG=/srv/www/lighttpd/live/ymir-live-${ARCH}-${DATE}-lxde.iso
+readonly LXQT_IMG=/srv/www/lighttpd/live/ymir-live-${ARCH}-${DATE}-lxqt.iso
 
 readonly GRUB="grub-i386-efi grub-x86_64-efi"
 
